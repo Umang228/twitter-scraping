@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Scraping</title>
+</head>
+<body>
+    <form action="/scrape" method="post">
+        <button type="submit">Click here to run the script</button>
+    </form>
+    
+    <div>
+        <h2>These are the most happening topics as on : {{ trend.date }} </h2>
+        <ol>
+        <li>{{ trend.nameoftrend1 }}</li>
+        <li>{{ trend.nameoftrend2 }}</li>
+        <li>{{ trend.nameoftrend3 }}</li>
+        <li>{{ trend.nameoftrend4 }}</li>
+        <li>{{ trend.nameoftrend5 }}</li>
+        </ol>
+        <h3>IP Address used for this query was : {{ trend.ip_address }} </h3>
+    </div>
+    <h2> Here’s a JSON extract of this record from the MongoDB: </h2>
+    <pre>{{ trend | tojson(indent=4) }}</pre>
+    <form action="/scrape" method="post">
+        <button type="submit">Click here to run the query again</button>
+    </form>
+</body>
+</html>
